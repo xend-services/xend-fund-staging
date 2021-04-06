@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./invoice.css">
+
+</head>
+<body>
+    <h1>Hello </h1>
+    <button style="padding: 20px;"  onclick = "buttonClick()" >Fund</button>
+     <script src="./sdk.js"></script>
+    <script>
+        function buttonClick(){
+           
+            Sdk.setup(
+                {
+                    currencyId: "261c3f81-0dd5-4a3f-b9f2-2fc4f37464c9",
+                    paymentOption: 1,
+                    amount: "2000",
+                    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZyYW5rbzRkb25AZ21haWwuY29tIiwic3ViIjoiQTAwMDAxNCIsImp0aSI6IjE3M2UxMTBhLWFhNDAtNDhjZi1iNjc4LTc2OTc5NTNmY2ZkMyIsImlhdCI6IjE2MTcyOTc1MjM4NjQuMDYiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6Ijk3ZTNhMTljLWMzZDUtNDY4Yi05MGQ3LTExODhlY2M3MmQxMSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJBMDAwMDE0IiwiTG9nZ2VkSW5BcyI6InVzZXIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiVG9rZW5JZGVudGl0eSI6IjZkYTA2ZDE1LTUxNjAtNDE1OC1hMzQ1LTliNGQyMjhlOGY0OCIsImV4cCI6MTYxNzcyOTUyMywiaXNzIjoiWGVuZCBBbmQgVWdvIiwiYXVkIjoiVW5iYW5rZWQifQ.JDk8qYlZASiEemV3qmmInv0p4OO8nsHyrHM-TM1MCRQ",
+                    onXendComplete: function(response){
+                    // Implement what should happen when the function has been completed
+                    console.log(response, 'i ma the response from you know who')
+                    },
+                    onclose: function(){
+                        //Implement what should happen when the modal is closed here
+                        alert('window closed')
+                    },
+                    onFail: function(response){
+                        //Implement what should happen when something fails
+                        console.log(response)
+                    }  
+                }
+            )
+        }
+        
+    </script>
+    
+</body>
+</html>
